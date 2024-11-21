@@ -1,0 +1,8 @@
+version: "2.0" # docker compose 파일의 버전
+
+services: # 아래는 서비스 정의  
+   app: # services명  
+      build: .                             # Dockerfile의 경로 
+      image: gdhong/app:latest             # 이미지 소유자의 것
+      ports:
+        - "5000:5000"

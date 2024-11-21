@@ -1,0 +1,27 @@
+# docker-compose.yml
+
+version: "3.0"                 # docker compose 파일의 버전
+
+services: # 아래는 서비스 정의  
+   python-app1:               # service1의 명칭  
+      build: ./app1           # Dockerfile의 경로  
+
+   python-app2:              # service2의 명칭  
+      build: ./app2            # Dockerfile의 경로  
+
+   my-bash:
+      image: ubuntu:latest
+      # stdin_open: true
+      # tty: true
+      # command: /bin/bash
+
+   my-web:
+      image: nginx:latest
+      ports: 
+            - "80:80"
+
+   my-web1:
+      build: ./my-web1
+      image: lys1710/visions:latest
+      ports:
+            - "5000:5000"   
